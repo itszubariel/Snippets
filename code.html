@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zubariel</title>
+  <meta name="description" content="This is a Snippet Made by Zubariel.">
+  <meta name="keywords" content="Code, Snippet, BDFD">
+  <meta name="author" content="Zubariel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #b9bec3;
+      color: black; /* Set default text color */
+      text-align: center; /* Center text content */
+      margin: 0; /* Remove default margin */
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      min-height: 100vh; /* Minimum height of the viewport */
+      flex-direction: column; /* Stack items vertically */
+      padding-bottom: 50px;
+    }
+
+    .outer-container {
+      display: flex; /* Use flexbox for layout */
+      justify-content: center; /* Center inner items horizontally */
+      align-items: center; /* Center inner items vertically */
+      flex-wrap: wrap; /* Allow items to wrap */
+      gap: 20px; /* Gap between outer containers */
+      width: 80%; /* Set the width to cover 80% of the screen */
+      max-width: 1000px; /* Limit maximum width */
+      background-color:#F0F0F0; /* Background color for the outer container */
+      padding: 20px; /* Add padding for spacing */
+      padding-bottom: 20px;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+      margin-top: 50px; /* Adjust top margin as needed */
+      margin-bottom: 20px; /* Adjust bottom margin as needed */
+    }
+
+    .container {
+      width: 100%; /* Adjust width as needed */
+      padding: 10px; /* Reduce padding for spacing */
+      border: 1px solid #ccc;
+      background-color: #E0E0E0; /* Background color for code container */
+      border-radius: 5px;
+      overflow: hidden; /* Hide overflow initially */
+      box-sizing: border-box; /* Include padding and border in the width */
+      text-align: left; /* Align text to the left */
+    }
+
+    .container h1 {
+      margin-top: 0; /* Remove top margin for header */
+      margin-bottom: 10px; /* Reduce bottom margin for header */
+      color: white; /* Set text color for header */
+    }
+
+    .code-container {
+      padding: 10px; /* Reduce padding for spacing */
+      overflow: auto; /* Enable horizontal and vertical scrolling */
+      max-height: 300px; /* Set max height for scroll */
+    }
+
+    .code-container pre {
+      margin: 0; /* Remove default margin */
+      white-space: pre-wrap; /* Ensure line breaks are preserved */
+      text-align: left; /* Align text to the left */
+    }
+
+    .copy-button {
+      display: block;
+      margin-top: 10px;
+      margin-left: auto; /* Align button to the right */
+      margin-right: auto; /* Align button to the right */
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: grey;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background-color: black;
+      transform: scale(1.2); /* Grow the button on hover */
+    }
+
+    .suggestion {
+        margin-bottom: 10px;
+        margin-top: 50px;
+      }
+
+
+  </style>
+</head>
+<body>
+
+    <div>
+        <h1 class="suggestion"; style="color: black;"> <u><a href="index.html">Suggestion Command's Code</u></a></h1>
+      </div>
+
+
+<div class="outer-container">
+  <div class="container">
+    <h1 style="color: black;"><u>Read Me</u></h1>
+
+    <div class="code-container">
+      <pre><code id="codeSnippet2">
+<span style="color: red;"><u>Command Details:</u></span>
+
+<span style="color: blue;"><u>Prefix:</u></span> (your prefix)suggest
+<span style="color: blue;"><u>Aliases:</u></span> sug, suggest
+<span style="color: blue;"><u>Language:</u></span> BDScript 2
+
+<span style="color: red;"><u>Slash Command Settings:</u></span>
+
+<span style="color: blue;"><u>Options:</u></span>
+<span style="color: green;"><u>Name:</u></span> Suggestion
+<span style="color: green;"><u>Type:</u></span> Text
+<span style="color: green;"><u>Required?:</u></span> Yes
+
+<span style="color: red;"><u>Reposting or Sharing Policy:</u></span>        
+To share this code, please credit zubariel and provide a link to the original page.
+      </code></pre>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 style="color: black;"><u>Main Code</u></h1>
+
+    <div class="code-container">
+      <pre><code id="codeSnippet">
+$nomention
+$ephemeral
+$defer
+$onlyIf[$guildID!=;]
+$embedSuppressErrors[;** Error Occurred**.;2a2c31;;;]
+        
+$if[$message==]
+$title[Invalid Use of The Suggest Command]
+$description[
+Correct Use: `(prefix)suggest (suggestion)`]
+$color[2a2c31]
+        
+$else
+        
+$c[--------READ ME--------]
+$c[Change The Command CoolDown According To Your Liking (1h is Recommended)]
+$cooldown[1s;Please wait **%time%** before using this again!]
+        
+$deletecommand
+        
+$sendEmbedMessage[$channelID;;;;**Your suggestion has been sent! <@$authorID>**;2a2c31;;;;;;;no;no]
+      
+$c[--------READ ME--------]
+$c[Replace This Channel ID With A Valid Channel ID Its The Channel ID Where The Suggestion Gets Sent]
+$var[channel.ID;1153347482701537293]
+        
+$var[embed.msg.id;$sendEmbedMessage[$var[channel.ID];;New Suggestion;;$message;2a2c31;$username;$authorAvatar;🔼 Upvote | 🔽 Downvote | ✅  Already Added | ❌ Won't be Added;;;;;yes]] 
+        
+$useChannel[$var[channel.ID]]
+$addMessageReactions[$var[channel.ID];$var[embed.msg.id];🔼;🔽;✅;❌]
+$endif
+      </code></pre>
+    </div>
+  </div>
+  <button class="copy-button" onclick="copyCode()">Copy to Clipboard</button>
+</div>
+
+<div>
+    <p style="color: color black;">&copy; Zubariel 2024. All rights reserved.</p>
+</div>
+
+<script>
+  // Function to copy text from a specified element to the clipboard
+  function copyCode() {
+    // Select the <code> element containing the code snippet
+    var codeSnippet = document.getElementById('codeSnippet');
+    
+    // Create a range object to select the text inside the <code> element
+    var range = document.createRange();
+    range.selectNode(codeSnippet);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    
+    try {
+      // Attempt to copy the selected text to the clipboard
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copy command was ' + msg);
+      alert('Code copied to clipboard!');
+    } catch (err) {
+      console.log('Unable to copy');
+      alert('Unable to copy code. Please try again.');
+    }
+    
+    // Clear the selection
+    window.getSelection().removeAllRanges();
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
